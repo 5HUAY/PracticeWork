@@ -1,6 +1,6 @@
 fn draw_tree(levels: usize) {
     (0..levels).for_each(|i| {
-        let height = i + 3; // Висота кожного трикутника
+        let height = i + 3;
         let max_width = height * 2 - 1;
 
         (0..height).for_each(|j| {
@@ -10,10 +10,10 @@ fn draw_tree(levels: usize) {
         });
     });
 
-    // Малюємо нижню частину (стовбур)
-    let trunk_width = if levels % 2 == 0 { levels + 1 } else { levels }; // Стовбур непарної ширини
-    let trunk_height = levels; // Висота стовбура рівна кількості трикутників
-    let max_width = (levels + 2) * 2 - 1; // Максимальна ширина основи ялинки
+
+    let trunk_width = if levels % 2 == 0 { levels + 1 } else { levels };
+    let trunk_height = levels;
+    let max_width = (levels + 2) * 2 - 1;
 
     (0..trunk_height).for_each(|_| {
         let spaces = (max_width - trunk_width) / 2;
@@ -22,6 +22,6 @@ fn draw_tree(levels: usize) {
 }
 
 fn main() {
-    let triangles = 4; // Кількість трикутників задається тут
+    let triangles = 4;
     draw_tree(triangles);
 }
